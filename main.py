@@ -8,7 +8,7 @@ import sys
 import os
 from tkinter import Tk, Label, Button
 import tkinter as tk
-
+import random
 def New_Window():
     
     Window = tk.Toplevel()
@@ -23,11 +23,24 @@ def New_Window():
     Keypad=tk.Label(Window,bg="pink",width=100,height=500).place(x=390,y=250)
     man=tk.Label(Window,bg="grey",width=40,height=300).place(x=50,y=100)
     canvas.create_window(0, 10, window=man)
+    
+    word_spaces=tk.StringVar()
+    words=tk.Label(Window,textvariable=word_spaces,bg="white",width=30,height=5).place(x=400,y=100)
+    
+    
     def alphabet_enter(item):
         sr_al=item
         
     word_list= ['VIRUS','SANITIZER','MASK','PANDEMIC','OUTBREAK','REOPNEN','LOCKDOWN','PATIENT','DISEASE','RECOVER','MEDICINE','IMPACT','ANTIBODY',
             'ISOLATION','OUTBREAK','TEST','RECOVER','ANTIBODY','SYMPTOM','CRISIS','APPOINTMENT','HEALTH','REOPEN']
+    
+     def newGame():
+        global the_word_Spaces
+        global noOfGuesses
+        noOfGuesses =0
+        the_word=random.choice(word_list)
+        the_word_Spaces = " ".join(the_word)
+        word_spaces.set(' '.join("__"*len(the_word)))
     
     
 
@@ -83,4 +96,5 @@ def New_Window():
     X=tk.Button(Window,text="X",font=('Helvatica 10 bold '),command=alphabet_enter("x"),bg="white",fg="black",height="3",width="4").place(x=550,y=600)
     Y=tk.Button(Window,text="Y",font=('Helvatica 10 bold '),command=alphabet_enter("y"),bg="white",fg="black",height="3",width="4").place(x=600,y=600)
     Z=tk.Button(Window,text="Z",font=('Helvatica 10 bold '),command=alphabet_enter("z"),bg="white",fg="black",height="3",width="4").place(x=650,y=600)
-    RESTART=tk.Button(Window,text="RESTART",font=('Helvatica 7 bold '),bg="white",fg="red",height="3",width="4",command=restart_program()).place(x=650,y=525)
+    RESTART=tk.Button(Window,text="RESTART",font=('Helvatica 7 bold '),bg="white",fg="red",height="4",width="4", command=lambda:New_Window()).place(x=650,y=525)
+    start = tk.Button(Window, text="START", bg='White', fg='Black',command=lambda:newGame()).place(x=650,y=300)
