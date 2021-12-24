@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Dec 23 10:04:45 2021
-
-@author: raneh
-"""
 import sys
 import os
 from tkinter import Tk, Label, Button
@@ -34,7 +28,7 @@ def New_Window():
     word_list= ['VIRUS','SANITIZER','MASK','PANDEMIC','OUTBREAK','REOPNEN','LOCKDOWN','PATIENT','DISEASE','RECOVER','MEDICINE','IMPACT','ANTIBODY',
             'ISOLATION','OUTBREAK','TEST','RECOVER','ANTIBODY','SYMPTOM','CRISIS','APPOINTMENT','HEALTH','REOPEN']
     
-     def newGame():
+    def newGame():
         global the_word_Spaces
         global noOfGuesses
         noOfGuesses =0
@@ -50,6 +44,7 @@ def New_Window():
         saving data) must be done before calling this function."""
         python = sys.executable
         os.execl(python, python, * sys.argv)
+    
 
 
 
@@ -96,5 +91,5 @@ def New_Window():
     X=tk.Button(Window,text="X",font=('Helvatica 10 bold '),command=alphabet_enter("x"),bg="white",fg="black",height="3",width="4").place(x=550,y=600)
     Y=tk.Button(Window,text="Y",font=('Helvatica 10 bold '),command=alphabet_enter("y"),bg="white",fg="black",height="3",width="4").place(x=600,y=600)
     Z=tk.Button(Window,text="Z",font=('Helvatica 10 bold '),command=alphabet_enter("z"),bg="white",fg="black",height="3",width="4").place(x=650,y=600)
-    RESTART=tk.Button(Window,text="RESTART",font=('Helvatica 7 bold '),bg="white",fg="red",height="4",width="4", command=lambda:New_Window()).place(x=650,y=525)
+    RESTART=Button(Window,text="RESTART",font=('Helvatica 7 bold '),bg="white",fg="red",height="4",width="4", command=restart_program).place(x=650,y=525)
     start = tk.Button(Window, text="START", bg='White', fg='Black',command=lambda:newGame()).place(x=650,y=300)
