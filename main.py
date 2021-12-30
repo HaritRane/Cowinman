@@ -29,12 +29,13 @@ def New_Window():
             'ISOLATION','OUTBREAK','TEST','RECOVER','ANTIBODY','SYMPTOM','CRISIS','APPOINTMENT','HEALTH','REOPEN']
     
     def newGame():
-        global the_word_Spaces
-        global noOfGuesses
-        noOfGuesses =0
+        global done_guesses
+        global work_and_spaces
+        done_guesses =0
         the_word=random.choice(word_list)
-        the_word_Spaces = " ".join(the_word)
+        word_and_spaces = " ".join(the_word)
         word_spaces.set(' '.join("__"*len(the_word)))
+    
     
     
 
@@ -93,3 +94,4 @@ def New_Window():
     Z=tk.Button(Window,text="Z",font=('Helvatica 10 bold '),command=alphabet_enter("z"),bg="white",fg="black",height="3",width="4").place(x=650,y=600)
     RESTART=Button(Window,text="RESTART",font=('Helvatica 7 bold '),bg="white",fg="red",height="4",width="4", command=restart_program).place(x=650,y=525)
     start = tk.Button(Window, text="START", bg='White', fg='Black',command=lambda:newGame()).place(x=650,y=300)
+ 
