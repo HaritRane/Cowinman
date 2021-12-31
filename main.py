@@ -2,6 +2,7 @@ import sys
 import os
 from tkinter import Tk, Label, Button
 import tkinter as tk
+'''from tkinter import messagebox
 import random
 def New_Window():
     
@@ -22,8 +23,23 @@ def New_Window():
     words=tk.Label(Window,textvariable=word_spaces,bg="white",width=30,height=5).place(x=400,y=100)
     
     
-    def alphabet_enter(item):
-        sr_al=item
+    '''def alphabet_enter(item):
+              l=item
+              global done_guesses  
+              if done_guesses<6:
+                 display=list(word_and_spaces)
+                 guessed = list(word_spaces.get())
+                 if word_and_spaces.count(l)>0:
+                     for c in range(len(display)):
+                       if display[c]==l:
+                          guessed[c]=l
+                       word_spaces.set("".join(guessed))
+                       if word_spaces.get()==word_and_spaces:
+                          messagebox.showinfo("BRAVO!!!!!YOU GUESSED THE WORD RIGHT!")
+              else:
+                done_guesses=done_guesses+1
+                if done_guesses==6:
+                    messagebox.showwarning("GUESSES OVER! YOU LOSE:(")
         
     word_list= ['VIRUS','SANITIZER','MASK','PANDEMIC','OUTBREAK','REOPNEN','LOCKDOWN','PATIENT','DISEASE','RECOVER','MEDICINE','IMPACT','ANTIBODY',
             'ISOLATION','OUTBREAK','TEST','RECOVER','ANTIBODY','SYMPTOM','CRISIS','APPOINTMENT','HEALTH','REOPEN']
