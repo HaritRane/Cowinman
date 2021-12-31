@@ -41,8 +41,8 @@ def New_Window():
                 if done_guesses==6:
                     messagebox.showwarning("GUESSES OVER! YOU LOSE:(")
         
-    word_list= ['VIRUS','SANITIZER','MASK','PANDEMIC','OUTBREAK','REOPNEN','LOCKDOWN','PATIENT','DISEASE','RECOVER','MEDICINE','IMPACT','ANTIBODY',
-            'ISOLATION','OUTBREAK','TEST','RECOVER','ANTIBODY','SYMPTOM','CRISIS','APPOINTMENT','HEALTH','REOPEN']
+    word_list= ['VIRUS','MASK','PANDEMIC','OUTBREAK',LOCKDOWN','PATIENT','DISEASE','RECOVER','MEDICINE','IMPACT','ANTIBODY',
+                'OUTBREAK','TEST','RECOVER','ANTIBODY','SYMPTOM','CRISIS','HEALTH','REOPEN']
     
     def newGame():
         global done_guesses
