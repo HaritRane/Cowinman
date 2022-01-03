@@ -11,6 +11,8 @@ from string import ascii_uppercase
 import random
 from tkinter import *
 import time
+import os
+import sys
 _width=200
 _height=500
 score=0
